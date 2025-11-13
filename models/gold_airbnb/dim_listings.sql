@@ -6,8 +6,7 @@ SELECT
   a.host_id,
   REPLACE( a.price_str, '$') :: NUMBER(10,2) AS price,
   a.created_at,
-  a.updated_at,
-  1 AS Validation_Stage
+  a.updated_at
 FROM
   {{ ref('silver_listings') }} a  inner join  {{ ref('listings_snapshot') }} b
     on a.listing_id = b.listing_id
