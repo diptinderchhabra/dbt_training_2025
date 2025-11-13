@@ -1,0 +1,34 @@
+dbt_training_nov2025:
+  outputs:
+    DEV:
+      account: nmbzhvn-nc76913
+      database: DEV
+      password: "dbtPassword123"
+      role: TRANSFORM
+      schema: BRONZE_AIRBNB
+      threads: 4
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+    UAT:
+      account: nmbzhvn-nc76913
+      database: UAT
+      password: "dbtPassword123"
+      role: TRANSFORM
+      schema: BRONZE_AIRBNB
+      threads: 4
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+    PROD:
+      account: nmbzhvn-nc76913
+      database: PROD
+      password: "dbtPassword123"
+      role: TRANSFORM
+      schema: BRONZE_AIRBNB
+      threads: 4
+      type: snowflake
+      user: dbt
+      warehouse: COMPUTE_WH
+
+  target: "{{env_var('DBT_TARGET')}}"
